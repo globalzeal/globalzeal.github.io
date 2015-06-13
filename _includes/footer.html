@@ -1,0 +1,65 @@
+
+    <div class="section footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="one-third column">
+                    <h5>Quick Links</h5>
+                    <ul>
+                    {% for _page in site_pages %}
+                        {% if _page.title %}
+                        <li>
+                            <a class="_page-link" href="{{ _page.url | prepend: site.baseurl }}">{{ _page.title }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="one-third column">
+                    <h5>Preface</h5>
+                    <p>
+                        <span class="hl">Global Zeal</span> is a Cebu-based software development firm specializing
+                        in
+                        <span class="hl">Node.JS Development</span> that combines industry-leading web application
+                        design expertise with
+                        <span class="hl">proven business acumen</span> to transform the way our clients do business.
+                        <a
+                        href="/what-we-do.html">Learn More</a>
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="one-third column">
+                    <h5>Contact</h5>
+                    <p>Email:
+                        <a href="mailto:contact@globalzeal.net">contact@globalzeal.net</a>
+                    </p>
+                    <p>Tel:
+                        <span class="hl">(032) 1223-4567</span>
+                    </p>
+                    <hr>
+                    <h5>Address</h5>
+                    <img class="map" src="/images/gzmap.png" width="182" height="114"
+                    alt="gz map">
+                    <p>
+                        <span class="hl">Global Zeal Inc.</span> 6th Floor, JESA ITC Bldg. General Maxilom Avenue
+                        Cebu City, PH</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="one-half column">
+                    <p>Copyright &copy; 2015 Global Zeal Inc.</p>
+                </div>
+                <div class="one-half column">
+                    <p class="follow">Follow us on:
+                        <a href="#">Twitter</a>
+                        <a href="#">Google+</a>
+                        <a href="#">Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>

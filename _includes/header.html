@@ -1,0 +1,28 @@
+<header class="nav">
+
+    <div class="container row">
+
+        <div class="two columns">
+            <a class="logo" href="/">Global Zeal</a>
+        </div>
+
+        <div class="ten columns">
+            <a class="dropdown-trigger" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAuklEQVR4Xu3a0Q3CMBAE0bgg+EUE0U2UVAimHkqgARB1zEsHN9rx2auMJf6N+PwLABIQJ0CBeAAcghTY1+enrME41vlNA9ivj1MaQHn4/+wOQQmIE6BAPAAOQQpQIE6AAvEA2AIUoECcAAXiAVjGdnvdyxCUosc63+kElIdXimqF1eIeQ26CtkCcAAXiAbAFKECBOAEKxANgC1Agr8B2mecyBK1w/mfpcvy1wlphrbCboJugLRAnkFfgB+L9EqVmg69GAAAAAElFTkSuQmCC" width="24" height="24" alt="menu-list" /></a>
+            <ul class="social-nav u-pull-right">
+                <li>
+                    <a href="#"><span class="icon-linkedin">&nbsp;</span></a>
+                </li>
+                <li class="active">
+                    <a href="#"><span class="icon-facebook">&nbsp;</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-twitter-alt">&nbsp;</span></a>
+                </li>
+            </ul>
+            <ul class="main-nav u-pull-right">{% assign site_pages = site.pages | sort:"id" %}{% for _page in site_pages %}{% if _page.title %}  <li {% if _page.title == page.title %} class="active" {% endif %}> <a class="_page-link" href="{{ _page.url | prepend: site.baseurl }}">{{ _page.title }}</a> </li> {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</header>

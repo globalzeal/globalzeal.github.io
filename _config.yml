@@ -1,0 +1,12 @@
+# Site settings
+title: Global Zeal Inc.
+email: contact@globalzeal.net
+description: > # this means to ignore newlines until "baseurl:"
+  Global Zeal is a Cebu-based software development firm specializing in Node.JS Development that combines industry-leading web application design expertise with proven business acumen to transform the way our clients do business.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://globalzeal.net" # the base hostname & protocol for your site
+twitter_username: globalzeal
+github_username:  globalzeal
+
+# Build settings
+markdown: kramdown
