@@ -71,16 +71,14 @@ $(document).ready(function () {
 				form.find('input, textarea').prop('disabled', true).css('opacity', '0.7');
 
 				var data = {};
-				data.email = email.value; 
-				data.body = '';
-				data.body += 'Full Name: ' + firstName.value + ' ' + lastName.value + '\n';
-				data.body += 'Email: ' + email.value + '\n';
-				data.body += 'Phone: ' + phone.value + '\n';
-				data.body += '\n';
-				data.body += '\n';
-				data.body += 'Comments \n';
-				data.body += '--------------------------------------- \n';
-				data.body += message.value + '\n';
+				data.content = '';
+				data.content += 'Full Name: ' + firstName.value + ' ' + lastName.value + '\n';
+				data.content += 'Email: ' + email.value + '\n';
+				data.content += 'Phone: ' + phone.value + '\n';
+				data.content += '\n';
+				data.content += 'Comments: \n';
+				data.content += '\n';
+				data.content += message.value + '\n';
 
 				$.post('//formspree.io/jupenz@gmail.com', data)
 					.done(function (d) {
