@@ -69,21 +69,22 @@ $(document).ready(function () {
 			if (errors === 0) {
 				// disable fields first while sending ajax request
 				form.find('input, textarea').prop('disabled', true).css('opacity', '0.7');
+				form.find('input[type="submit"]').val('Please Wait...');
 
 				var data = {};
-				data.content = '';
-				data.content += 'Full Name: ' + firstName.value + ' ' + lastName.value + '\n';
-				data.content += 'Email: ' + email.value + '\n';
-				data.content += 'Phone: ' + phone.value + '\n';
-				data.content += '\n';
-				data.content += 'Comments: \n';
-				data.content += '\n';
-				data.content += message.value + '\n';
 
-				$.post('//formspree.io/jupenz@gmail.com', data)
+				data.email   = email.value;
+				data.phone   = phone.value;
+				data.message = message.value;
+				data.name    = firstName.value + ' ' + lastName.value;
+
+				$.post('http://gzmail.herokuapp.com', data)
 					.done(function (d) {
-						console.log(d);
 						form.find('input, textarea').prop('disabled', false).css('opacity', '1').val('');
+						form.find('input[type="submit"]').val('SUBMIT');
+
+						$('.flash').addClass('success').html('Message Sent!').slideDown(300, 'swing');
+						$('.flash').delay(5000).fadeOut(200);
 					});
 			}
 

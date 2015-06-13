@@ -32,9 +32,10 @@ body {
 	height: 58px !important;
 	font-size: 16px !important;
 	font-weight: normal !important;
-	background-color: #9013FE !important;
-	border-color: #9013FE !important;
+	background-color: #666 !important;
+	border-color: #666 !important;
 	color : rgba(255, 255, 255, 0.8) !important;
+	border-radius: 3px !important;
 }
 
 /* Links
@@ -88,7 +89,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-	border: 1px solid #aaa;
+	border: 1px solid #666;
 }
 
 textarea {
@@ -103,13 +104,12 @@ label {
 	opacity: 0.7;
 }
 
-form button, form input[type="submit"] {
-	border-radius: 100px !important;
-}
-
 input.error, textarea.error {
 	border-color: #d89393 !important;
-	background-color: #ffeaea;
+}
+
+input:disabled, textarea:disabled {
+	background-color: #CCCCCC;
 }
 
 /* Nav
@@ -136,7 +136,7 @@ input.error, textarea.error {
 	li a {
 		display: block;
 		position: relative;
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: bold;
 		letter-spacing: 1px;
 		text-transform: uppercase !important;
@@ -364,6 +364,10 @@ input.error, textarea.error {
 }
 
 /* Misc */
+.center {
+	text-align: center;
+}
+
 .shortl {
 	width: 68px;
 	border-width: 1px;
@@ -378,9 +382,27 @@ input.error, textarea.error {
 	}
 }
 
-
 .follow {
 	float: left;
+}
+
+.flash {
+	opacity: 0.97;
+	display: none;
+	position: fixed;
+	top: -1px;
+	width: 100%;
+	z-index: 10;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #FFF;
+	padding: 1em 0;
+
+	&.success {
+		background-color: #96ff7f;
+		color: #333;
+	}
 }
 
 .dropdown-trigger {
